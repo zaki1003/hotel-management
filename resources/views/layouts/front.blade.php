@@ -59,5 +59,5 @@
 </body>
 
 
-<!-- Mirrored from rn53themes.net/themes/demo/the-royal-hotel/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Feb 2018 03:56:24 GMT -->
+
 </html>

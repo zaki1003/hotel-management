@@ -54,9 +54,4 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="contact-map">
-            <iframe src="http://maps.google.com/maps?z=16&t=m&q=loc:{{ config('app.latitude') }}+{{ config('app.longitude') }}&amp;output=embed" allowfullscreen></iframe>
-        </div>
-    </div>
 @endsection

@@ -15,7 +15,7 @@ return [
 
     'name' => env('APP_NAME', 'Hotel Eden'),
     'phone_number' => env('PHONE_NUMBER', '213-558237377'),
-    'email' => env('EMAIL', ''),
+    'email' => env('EMAIL', 'HotelEmail@Hotel.com'),
     'website' => env('WEBSITE', ''),
     'video' => env('VIDEO', ''),
     'address' => env('ADDRESS', ''),
@@ -23,9 +23,7 @@ return [
     'google' => env('GOOGLE', '#'),
     'twitter' => env('TWITTER', '#'),
     'instagram' => env('INSTAGRAM', '#'),
-    'latitude' => env('MAP_LATITUDE', '#'),
-    'longitude' => env('MAP_LONGITUDE', '#'),
-    'currency' => env('CURRENCY', 'Rs. '),
+    'currency' => env('CURRENCY', 'DA. '),
 
     'vat_percentage' => env('VAT_PERCENTAGE', '13'),
     'service_charge_percentage' => env('SERVICE_CHARGE_PERCENTAGE', '10'),
