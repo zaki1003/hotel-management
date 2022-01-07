@@ -69,18 +69,9 @@ class RoomBookingController extends FrontController
         $room_booking->user_id = $user->id;
         $room_booking->save();
 
-        $this->send_email(Auth::user()->email);
-
         Session::flash('flash_title', "Success");
         Session::flash('flash_message', "Room has been Booked.");
         return redirect('/dashboard/room/booking');
 
-    }
-
-    private function send_email($email){
-        if(empty($email)){
-            $email = Auth::user()->email;
-        }
-        Mail::to($email)->send(new RoomBooked());
     }
 }
