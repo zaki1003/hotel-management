@@ -37,7 +37,7 @@
                     <td>{{ $room_booking->room->room_type->name}}</td>
                     <td>{{ $room_booking->arrival_date }}</td>
                     <td>{{ $room_booking->departure_date }}</td>
-                    <td>Rs. {{ $room_booking->room_cost }}</td>
+                    <td>DA. {{ $room_booking->room_cost }}</td>
                     <td>
                         @if($room_booking->status == "pending")
                             <span class="label label-default">Pending</span>
