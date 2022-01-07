@@ -39,7 +39,7 @@
                     <td>{{ $event_booking->event->venue}}</td>
                     <td>{{ $event_booking->event->date}}</td>
                     <td>{{ $event_booking->number_of_tickets }}</td>
-                    <td>Rs. {{ $event_booking->total_cost }}</td>
+                    <td>DA. {{ $event_booking->total_cost }}</td>
                     <td>
                         @if($event_booking->status == true)
                             <span class="db-success">Active</span>

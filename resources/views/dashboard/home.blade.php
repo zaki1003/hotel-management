@@ -43,7 +43,7 @@
                         <td>{{ $room_booking->room->room_type->name}}</td>
                         <td>{{ $room_booking->arrival_date }}</td>
                         <td>{{ $room_booking->departure_date }}</td>
-                        <td>Rs. {{ $room_booking->room_cost }}</td>
+                        <td>DA. {{ $room_booking->room_cost }}</td>
                         <td>
                             @if($room_booking->status == "pending")
                                 <span class="label label-default">Pending</span>
@@ -100,7 +100,7 @@
                         <td>{{ $event_booking->event->venue}}</td>
                         <td>{{ $event_booking->event->date}}</td>
                         <td>{{ $event_booking->number_of_tickets }}</td>
-                        <td>Rs. {{ $event_booking->total_cost }}</td>
+                        <td>DA. {{ $event_booking->total_cost }}</td>
                         <td>
                             @if($event_booking->status == true)
                                 <span class="db-success">Active</span>
