@@ -250,8 +250,14 @@ class UserController extends AdminController
                 if(!in_array($user->avatar, ['boy.png', 'boy-1.png', 'girl.png', 'girl-1.png', 'girl-2.png','man.png', 'man-1.png', 'man-2.png', 'man-3.png'])){
                     Storage::delete('public/avatars/'.$user->avatar);
                 }
-                $path = $request->file('avatar')->store('','avatar');
-                $user->avatar = $path;
+              
+               
+               
+              $path = time().'.'.$request->file('avatar')->extension();
+
+              $request->file('avatar')->move(public_path('front/images/avatars'), $path);
+              $user->avatar = $path;
+   
             }
 
             $user->save();

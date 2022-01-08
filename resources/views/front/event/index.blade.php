@@ -33,10 +33,10 @@
                                         <strong>Sorry!</strong> {{ $errors->first('number_of_tickets') }}
                                     </div>
                                 @endif
-                                <div class="col-md-2"> <img src="{{ ('storage/events/'. $event->image) }}" alt="" /> </div>
+                                <div class="col-md-2"> <img src="{{ ('front/images/events/'. $event->image) }}" alt="" /> </div>
                                 <div class="col-md-8">
                                     <h3>{{ $event->name }}</h3> <span><strong>Date: </strong> {{ \Carbon\Carbon::parse($event->date)->toFormattedDateString() }}</span>
-                                    <p><strong>Price: </strong>Rs. {{ $event->price }}</p>
+                                    <p><strong>Price: </strong>{{ $event->price }} DA</p>
                                     <p>{{ $event->description }}</p>
                                 </div>
                                 <div class="col-md-2"> <span style="font-weight: bold">Number of tickets</span> </div>
@@ -62,7 +62,7 @@
                                     <div class="col-md-2"> <img src="{{ ('storage/events/'. $event->image) }}" alt="" /> </div>
                                     <div class="col-md-8">
                                         <h3>{{ $event->name }}</h3> <span><strong>Date: </strong> {{ \Carbon\Carbon::parse($event->date)->toFormattedDateString() }}</span>
-                                        <p><strong>Price: </strong>Rs. {{ $event->price }}</p>
+                                        <p><strong>Price: </strong> {{ $event->price }} DA</p>
                                         <p>{{ $event->description }}</p>
                                     </div>
                                 </div>

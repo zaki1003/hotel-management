@@ -86,7 +86,7 @@
                             <div class="hp-amini">
                                 <ul>
                                     @foreach($room_type->facilities as $facility)
-                                    <li><img src="{{('/storage/facilities/'.$facility->icon)}}" alt="">{{ $facility->name }}</li>
+                                    <li><img src="{{('/front/images/facilities/'.$facility->icon)}}" alt="">{{ $facility->name }}</li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -140,7 +140,7 @@
                                 <div class="h-gal">
                                     <ul>
                                         @foreach($room_type->images as $image)
-                                        <li><img class="materialboxed" data-caption="{{ $image->caption }}" src="{{('/storage/room_types/'.$image->name)}}" alt="">
+                                        <li><img class="materialboxed" data-caption="{{ $image->caption }}" src="{{('/front/images/room_types/'.$image->name)}}" alt="">
                                         </li>
                                         @endforeach
                                     </ul>

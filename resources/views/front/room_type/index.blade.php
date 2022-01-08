@@ -23,7 +23,7 @@
                     </div>
                     @endif
                     <!--ROOM IMAGE-->
-                    <div class="r1 r-com"><img src="{{'/storage/room_types/'.$room_type->images->first()->name}}" alt="" />
+                    <div class="r1 r-com"><img src="{{'/front/images/room_types/'.$room_type->images->first()->name}}" alt="" />
                     </div>
                     <!--ROOM RATING-->
                     <div class="r2 r-com">

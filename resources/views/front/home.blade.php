@@ -8,7 +8,7 @@
             <ul class="slides">
              
                 @forelse($slider_images as $image)
-                {{-- <li> <img src="{{'/storage/slider/'.$image->name}}" alt=""> --}}
+                {{-- <li> <img src="{{'/front/images/slider/'.$image->name}}" alt=""> --}}
                     <li> <img src="{{'/front/images/slider/'.$image->name}}" alt="">
                
                     <!-- random image -->
@@ -54,7 +54,7 @@
                     <div class="col-md-4">
                         <div class="to-ho-hotel-con">
                             <div class="to-ho-hotel-con-1">
-                                <div class="hom-hot-av-tic"> Available Rooms: {{ count($room_type->rooms) }} </div> <img src="{{'/storage/room_types/'.$room_type->images->first()->name}}" alt=""> </div>
+                                <div class="hom-hot-av-tic"> Available Rooms: {{ count($room_type->rooms) }} </div> <img src="{{'/front/images/room_types/'.$room_type->images->first()->name}}" alt=""> </div>
                             <div class="to-ho-hotel-con-23">
                                 <div class="to-ho-hotel-con-2"> <a href="{{url('/room_type/'.$room_type->id)}}"><h4>{{ $room_type->name }}</h4></a> </div>
                                 <div class="to-ho-hotel-con-3">
@@ -100,7 +100,7 @@
                     @foreach($events as $event)
                     <div class="col-md-3 n2-event">
                         <!--event IMAGE-->
-                        <div class="n21-event hovereffect"> <img src="{{'/storage/events/'.$event->image}}" alt="">
+                        <div class="n21-event hovereffect"> <img src="{{'/front/images/events/'.$event->image}}" alt="">
                             <div class="overlay"> <a href="{{ url('/event/') }}"><span class="ev-book">Book Now</span></a> </div>
                         </div>
                         <!--event DETAILS-->
@@ -157,7 +157,7 @@
                             <!-- Room Types -->
                             @foreach($room_types as $room_type)
                                 <div class="portfolio room" data-cat="room">
-                                    <div class="portfolio-wrapper"> <img src="{{'/storage/room_types/'.$room_type->images->last()->name}}" alt="" />
+                                    <div class="portfolio-wrapper"> <img src="{{'/front/images/room_types/'.$room_type->images->last()->name}}" alt="" />
                                         <div class="label">
                                             <div class="label-text"> <a class="text-title">{{ $room_type->name }}</a></div>
                                             <div class="label-bg"></div>
@@ -168,7 +168,7 @@
                             <!-- Event Events -->
                             @foreach($events as $event)
                                 <div class="portfolio event" data-cat="event">
-                                    <div class="portfolio-wrapper"> <img src="{{ '/storage/events/'.$event->image }}" alt="" />
+                                    <div class="portfolio-wrapper"> <img src="{{ '/front/images/events/'.$event->image }}" alt="" />
                                         <div class="label">
                                             <div class="label-text"> <a class="text-title">{{ $event->name }}</a></div>
                                             <div class="label-bg"></div>
@@ -180,7 +180,7 @@
                         <!-- Food Photos -->
                             @foreach($foods as $food)
                                 <div class="portfolio food" data-cat="food">
-                                    <div class="portfolio-wrapper"> <img src="{{ '/storage/foods/'.$food->image }}" alt="" />
+                                    <div class="portfolio-wrapper"> <img src="{{ '/front/images/foods/'.$food->image }}" alt="" />
                                         <div class="label">
                                             <div class="label-text"> <a class="text-title">{{ $food->name }}</a></div>
                                             <div class="label-bg"></div>
@@ -213,7 +213,7 @@
                         <h4>Photo Gallery</h4>
                         <ul>
                             @foreach($slider_images as $image)
-                            <li><img class="materialboxed" data-caption="{{ $image->big_title }}" src="{{ '/storage/slider/'.$image->name }}" alt="">
+                            <li><img class="materialboxed" data-caption="{{ $image->big_title }}" src="{{ '/front/images/slider/'.$image->name }}" alt="">
                             </li>
                                 @endforeach
                         </ul>
@@ -235,7 +235,7 @@
                             @if(count($reviews) > 0)
                                 @foreach($reviews as $review)
                             <li>
-                                <a href="#!"> <img src="{{'/storage/avatars/'.$review->room_booking->user->avatar}}" alt="">
+                                <a href="#!"> <img src="{{'/front/images/avatars/'.$review->room_booking->user->avatar}}" alt="">
                                     <h5>{{ $review->room_booking->user->first_name }}@if($review->rating > 0), {{ $review->rating }} <i class="fa fa-star" aria-hidden="true"></i>@endif</h5> <span>{{ \Carbon\Carbon::parse($review->updated_at)->diffForHumans() }}</span>
                                     <p>{{ $review->review }}</p>
                                 </a>

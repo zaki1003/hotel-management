@@ -26,7 +26,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12" align="center">
-                                    <img height="450px" width="500px" src="{{'/storage/events/'.$event->image}}"/>
+                                    <img height="450px" width="500px" src="{{'/front/images/events/'.$event->image}}"/>
                                 </div>
                             </div>
                             <div class="row">

@@ -18,7 +18,7 @@
                             <div class="row">
 
                                 <div class="col-md-12" align="center">
-                                    <img height="250px" width="600px" src="{{'/storage/slider/'.$image->name}}"/>
+                                    <img height="250px" width="600px" src="{{'/front/images/slider/'.$image->name}}"/>
                                 </div>
                                 </div>
                             <div class="row">

@@ -33,7 +33,7 @@
                                             <tr>
                                                 <td>{{$index+1}}</td>
                                                 <td><img height="60px" width="60px" rel="tooltip"  alt="{{ $image->caption }}" title="{{ $image->caption }}"
-                                                         src="{{'/storage/room_types/'.$image->name}}"/></td>
+                                                         src="{{'/front/images/room_types/'.$image->name}}"/></td>
                                                 <td>{{ $image->caption }}</td>
 
                                                 <td>@if($image->is_primary == 1)

@@ -50,7 +50,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12" align="center">
-                                    <img height="70px" width="70px" src="{{'/storage/foods/'.$food->image}}"/>
+                                    <img height="70px" width="70px" src="{{'/front/images/foods/'.$food->image}}"/>
                                 </div>
                             </div>
                             <div class="row">

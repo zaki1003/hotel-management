@@ -88,7 +88,7 @@
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input type="email" name="email" class="form-control border-input"
-                                               placeholder="ex: hari@gmail.com" value="{{$user->email}}">
+                                               placeholder="ex: exemple@gmail.com" value="{{$user->email}}">
                                     </div>
                                 </div>
                             </div>

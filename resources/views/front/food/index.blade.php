@@ -30,7 +30,7 @@
                     <div class="row">
                         @foreach($foods as $food)
                             @continue($food->type !== "Appetizer")
-                        <div class="res-menu"> <img src="{{ ('storage/foods/'.$food->image) }}" alt="" />
+                        <div class="res-menu"> <img src="{{ ('front/images/foods/'.$food->image) }}" alt="" />
                             <h3>{{ $food->name }} <span> {{ $food->price }} DA.</span></h3> <span class="menu-item">{{ $food->description }}</span>
                         </div>
                             @endforeach
@@ -52,7 +52,7 @@
                     <div class="row">
                         @foreach($foods as $food)
                             @continue($food->type !== "Soup")
-                        <div class="res-menu"> <img src="{{ ('storage/foods/'.$food->image) }}" alt="" />
+                        <div class="res-menu"> <img src="{{ ('front/images/foods/'.$food->image) }}" alt="" />
                             <h3>{{ $food->name }} <span> {{ $food->price }} DA.</span></h3> <span class="menu-item">{{ $food->description }}</span>
                         </div>
                             @endforeach
@@ -74,7 +74,7 @@
                     <div class="row">
                         @foreach($foods as $food)
                             @continue($food->type !== "Salad")
-                        <div class="res-menu"> <img src="{{ ('storage/foods/'.$food->image) }}" alt="" />
+                        <div class="res-menu"> <img src="{{ ('front/images/foods/'.$food->image) }}" alt="" />
                             <h3>{{ $food->name }} <span> {{ $food->price }} DA.</span></h3> <span class="menu-item">{{ $food->description }}</span>
                         </div>
                             @endforeach
@@ -96,7 +96,7 @@
                     <div class="row">
                         @foreach($foods as $food)
                             @continue($food->type !== "Main Course")
-                        <div class="res-menu"> <img src="{{ ('storage/foods/'.$food->image) }}" alt="" />
+                        <div class="res-menu"> <img src="{{ ('front/images/foods/'.$food->image) }}" alt="" />
                             <h3>{{ $food->name }} <span> {{ $food->price }} DA.</span></h3> <span class="menu-item">{{ $food->description }}</span>
                         </div>
                             @endforeach
@@ -118,7 +118,7 @@
                     <div class="row">
                         @foreach($foods as $food)
                             @continue($food->type !== "Dessert")
-                        <div class="res-menu"> <img src="{{ ('storage/foods/'.$food->image) }}" alt="" />
+                        <div class="res-menu"> <img src="{{ ('front/images/foods/'.$food->image) }}" alt="" />
                             <h3>{{ $food->name }} <span>{{ $food->price }} DA.</span></h3> <span class="menu-item">{{ $food->description }}</span>
                         </div>
                             @endforeach

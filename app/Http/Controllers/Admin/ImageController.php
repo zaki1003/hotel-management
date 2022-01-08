@@ -73,7 +73,7 @@ class ImageController extends AdminController
             $image = new Image();
             if ($request->hasFile('image')) {
                 $path = $request->file('image')->store('', 'room_type');
-                $room_type_image = ImageManager::make('storage/room_types/' . $path);
+                $room_type_image = ImageManager::make('front/images/room_types/' . $path);
                 $room_type_image->fit(950, 400);
                 $room_type_image->save(storage_path() . '/app/public/room_types/' . $path);
                 $image->name = $path;
@@ -153,7 +153,7 @@ class ImageController extends AdminController
                 Storage::delete('public/room_types/'.$image->name);
 
                 $path = $request->file('image')->store('', 'room_type');
-                $room_type_image = ImageManager::make('storage/room_types/' . $path);
+                $room_type_image = ImageManager::make('front/images/room_types/' . $path);
                 $room_type_image->fit(950, 400);
                 $room_type_image->save(storage_path() . '/app/public/room_types/' . $path);
                 $image->name = $path;
@@ -237,7 +237,7 @@ class ImageController extends AdminController
                 foreach ($images as $file) {
 
                     $path = $file->store('','room_type');
-                    $image = ImageManager::make('storage/room_types/'.$path);
+                    $image = ImageManager::make('front/images/room_types/'.$path);
                     $image->fit(950, 650);
                     $image->save(storage_path().'/app/public/room_types/'.$path);
 

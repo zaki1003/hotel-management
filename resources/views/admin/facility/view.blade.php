@@ -28,7 +28,7 @@
                                             <tr>
                                                 <td>{{$index+1}}</td>
                                                 <td>{{ $facility->name }}</td>
-                                                <td><img src="{{'/storage/facilities/'.$facility->icon}}" alt=""></td>
+                                                <td><img src="{{'/front/images/facilities/'.$facility->icon}}" alt=""></td>
                                                 <td>
                                                     @if($facility->status == 1)
                                                         <button class="btn btn-success btn-xs btn-fill">Active</button>

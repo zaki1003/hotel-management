@@ -17,7 +17,7 @@
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-12" align="center">
-                                    <img height="250px" width="600px" src="{{'/storage/room_type/'.$image->name}}"/>
+                                    <img height="250px" width="600px" src="{{'/front/images/room_type/'.$image->name}}"/>
                                 </div>
                             </div>
                             <div class="row">

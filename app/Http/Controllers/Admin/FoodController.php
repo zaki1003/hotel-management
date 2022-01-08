@@ -114,8 +114,8 @@ class FoodController extends AdminController
             'status' => 'required|boolean'
         ];
 
-        if ($request->hasFile('image')) {
-            $rules['image'] = 'mimes:jpeg,jpg,png';
+     if ($request->hasFile('image')) {
+            $rules['image'] = 'mimes:jpeg,jpg,png,JPG,JPEG,PNG';
         }
 
         $validator = Validator::make($request->all(), $rules);
@@ -133,12 +133,41 @@ class FoodController extends AdminController
         if ($request->hasFile('image')) {
             Storage::delete('public/foods/'.$food->image);
 
-            $path = $request->file('image')->store('', 'food');
+          $path = $request->file('image')->store('', 'food');
             $food_image = ImageManager::make('storage/foods/' . $path);
-            $food_image->fit(70, 70);
+           
             $food_image->save(storage_path() . '/app/public/foods/' . $path);
             $food->image = $path;
+     
+
+/*
+            $path = time().'.'.$request->file('image')->extension();
+            $request->file('image')->move(public_path('front/images/avatars'), $path);
+           
+           
+            $food_image = ImageManager::make('front/images/foods/' . $path);
+            $food_image->fit(70, 70);
+           
+           
+            $food_image->move(public_path('front/images/avatars'), $path);
+            
+            
+
+            $path = time().'.'.$request->file('image')->extension();
+            
+           
+            $food_image = ImageManager::make($request->file('image'));
+            $food_image->fit(70, 70);
+           
+           
+            $food_image->move(public_path('front/images/avatars'), $path);
+
+
+
+            $food->image = $path;
+      */
         }
+     
 
         $food->save();
 

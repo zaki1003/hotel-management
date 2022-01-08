@@ -36,7 +36,7 @@
                                                 <td>{{$index+1}}</td>
                                                 <td>{{ $event->name }}</td>
                                                 <td><img height="70px" width="70px" rel="tooltip"  alt="{{ $event->image }}"
-                                                         src="{{'/storage/events/'.$event->image}}"/></td>
+                                                         src="{{'/front/images/events/'.$event->image}}"/></td>
                                                 <td>{{ $event->venue }}</td>
                                                 <td><span class="badge">{{ $event->price }}</span></td>
                                                 <td><span class="btn btn-default btn-xs">{{ $event->capacity }}</span></td>

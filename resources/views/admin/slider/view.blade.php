@@ -33,7 +33,7 @@
                                             <tr>
                                                 <td>{{$index+1}}</td>
                                                 <td><img height="60px" width="60px" rel="tooltip"  alt="{{ $image->caption }}" title="{{ $image->caption }}"
-                                                         src="{{'/storage/slider/'.$image->name}}"/></td>
+                                                         src="{{'/front/images/slider/'.$image->name}}"/></td>
                                                 <td>{{ $image->small_title }}</td>
 
                                                 <td>{{ $image->big_title }}</td>

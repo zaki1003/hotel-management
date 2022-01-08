@@ -3,7 +3,7 @@
 @section('content')
 
     <!--TOP SECTION-->
-    <div class="hp-banner"> <img src="{{'/storage/room_types/'.$room_type->images->first()->name}}" alt=""> </div>
+    <div class="hp-banner"> <img src="{{'/front/images/room_types/'.$room_type->images->first()->name}}" alt=""> </div>
     <!--END HOTEL ROOMS-->
     <!--CHECK AVAILABILITY FORM-->
     <div class="check-available">
@@ -95,7 +95,7 @@
                             <div class="hp-amini">
                                 <ul>
                                     @foreach($room_type->facilities as $facility)
-                                    <li><img src="{{('/storage/facilities/'.$facility->icon)}}" alt="">{{ $facility->name }}</li>
+                                    <li><img src="{{('/front/images/facilities/'.$facility->icon)}}" alt="">{{ $facility->name }}</li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -139,7 +139,7 @@
                                 <div class="h-gal">
                                     <ul>
                                         @foreach($room_type->images as $image)
-                                        <li><img class="materialboxed" data-caption="{{ $image->caption }}" src="{{('/storage/room_types/'.$image->name)}}" alt="">
+                                        <li><img class="materialboxed" data-caption="{{ $image->caption }}" src="{{('/front/images/room_types/'.$image->name)}}" alt="">
                                         </li>
                                         @endforeach
                                     </ul>
@@ -205,7 +205,7 @@
                                             @foreach($room->reviews as $review)
 
                                                     <li>
-                                                        <div class="lr-user-wr-img"> <img src="{{'/storage/avatars/'.$review->room_booking->user->avatar}}" alt=""> </div>
+                                                        <div class="lr-user-wr-img"> <img src="{{'/front/images/avatars/'.$review->room_booking->user->avatar}}" alt=""> </div>
                                                         <div class="lr-user-wr-con">
                                                             <h6>{{ $review->room_booking->user->first_name." ".$review->room_booking->user->last_name }} @if($review->rating > 0)<span> {{ $review->rating }} <i class="fa fa-star" aria-hidden="true"></i></span>@endif</h6> <span class="lr-revi-date"> {{ \Carbon\Carbon::parse($review->updated_at)->diffForHumans() }}</span>
                                                             <p>{{ $review->review }}</p>

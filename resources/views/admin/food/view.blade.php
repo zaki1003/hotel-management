@@ -36,7 +36,7 @@
                                                 <td>{{ $food->name }}</td>
                                                 <td>{{ $food->type }}</td>
                                                 <td><img height="70px" width="70px" rel="tooltip"  alt="{{ $food->image }}"
-                                                         src="{{'/storage/foods/'.$food->image}}"/></td>
+                                                         src="{{'/front/images/foods/'.$food->image}}"/></td>
                                                 <td><span class="badge">{{ $food->price }}</span></td>
                                                 <td>
                                                     @if($food->status == 1)
