@@ -84,7 +84,14 @@ class UserController extends AdminController
 
             // Avatar Upload
             if ($request->hasFile('avatar')) {
-                $path = $request->file('avatar')->store('','avatar');
+             /*   $path = $request->file('avatar')->store('','avatar');
+                $user->avatar = $path; */
+           
+           
+           
+                $path = time().'.'.$request->file('avatar')->extension();
+
+                $request->file('avatar')->move(public_path('front/images/avatars'), $path);
                 $user->avatar = $path;
             }
 
@@ -177,8 +184,18 @@ class UserController extends AdminController
             if ($request->hasFile('avatar')) {
                 if(!in_array($user->avatar, ['boy.png', 'boy-1.png', 'girl.png', 'girl-1.png', 'girl-2.png','man.png', 'man-1.png', 'man-2.png', 'man-3.png'])){
                     Storage::delete('public/avatars/'.$user->avatar);
+                    $image_path = "front/images/avatars/" .$user->avatar;
+                    if(File::exists($image_path)) {            
+                              @unlink($image_path);
+                        
+                          }
                 }
-                $path = $request->file('avatar')->store('','avatar');
+             /*   $path = $request->file('avatar')->store('','avatar');
+                $user->avatar = $path;*/
+         
+                $path = time().'.'.$request->file('avatar')->extension();
+
+                $request->file('avatar')->move(public_path('front/images/avatars'), $path);
                 $user->avatar = $path;
             }
 
@@ -249,6 +266,11 @@ class UserController extends AdminController
             if ($request->hasFile('avatar')) {
                 if(!in_array($user->avatar, ['boy.png', 'boy-1.png', 'girl.png', 'girl-1.png', 'girl-2.png','man.png', 'man-1.png', 'man-2.png', 'man-3.png'])){
                     Storage::delete('public/avatars/'.$user->avatar);
+                    $image_path = "front/images/avatars/" .$user->avatar;
+                    if(File::exists($image_path)) {            
+                              @unlink($image_path);
+                        
+                          }
                 }
               
                
@@ -295,6 +317,13 @@ class UserController extends AdminController
                     if(Storage::disk('avatar')->exists($user->avatar)){
                         if(!in_array($user->avatar, ['boy.png', 'boy-1.png', 'girl.png', 'girl-1.png', 'girl-2.png','man.png', 'man-1.png', 'man-2.png', 'man-3.png'])){
                             Storage::delete('public/avatars/'.$user->avatar);
+                    
+                            $image_path = "front/images/avatars/" .$user->avatar;
+                            if(File::exists($image_path)) {            
+                                      @unlink($image_path);
+                                
+                                  }
+                    
                         }
                     }
 

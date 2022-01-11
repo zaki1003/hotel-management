@@ -9,6 +9,8 @@ use Intervention\Image\ImageManagerStatic as ImageManager;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Image;
 
 class FoodController extends AdminController
 {
@@ -69,11 +71,23 @@ class FoodController extends AdminController
         $food->status = $request->input('status');
 
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('', 'food');
+      /*      $path = $request->file('image')->store('', 'food');
             $food_image = ImageManager::make('storage/foods/' . $path);
             $food_image->fit(70, 70);
             $food_image->save(storage_path() . '/app/public/foods/' . $path);
             $food->image = $path;
+      */
+      
+
+      $image = $request->file('image');
+      $input['imagename'] = time().'.'.$image->extension();         
+      $filePath = public_path('front/images/foods/');    
+      $img = Image::make($image->path());
+      $img->fit(70, 70)->save($filePath.'/'.$input['imagename']);
+      $food->image = $input['imagename']; 
+      
+      
+      
         }
 
         $food->save();
@@ -132,40 +146,29 @@ class FoodController extends AdminController
 
         if ($request->hasFile('image')) {
             Storage::delete('public/foods/'.$food->image);
-
-          $path = $request->file('image')->store('', 'food');
+/*
+           $path = $request->file('image')->store('', 'food');
             $food_image = ImageManager::make('storage/foods/' . $path);
            
             $food_image->save(storage_path() . '/app/public/foods/' . $path);
             $food->image = $path;
-     
-
-/*
-            $path = time().'.'.$request->file('image')->extension();
-            $request->file('image')->move(public_path('front/images/avatars'), $path);
-           
-           
-            $food_image = ImageManager::make('front/images/foods/' . $path);
-            $food_image->fit(70, 70);
-           
-           
-            $food_image->move(public_path('front/images/avatars'), $path);
-            
-            
-
-            $path = time().'.'.$request->file('image')->extension();
-            
-           
-            $food_image = ImageManager::make($request->file('image'));
-            $food_image->fit(70, 70);
-           
-           
-            $food_image->move(public_path('front/images/avatars'), $path);
+     */
 
 
+       
+    $image_path = "front/images/foods/" .$food->image;
+    if(File::exists($image_path)) {            
+              @unlink($image_path);
+        
+          }
 
-            $food->image = $path;
-      */
+            $image = $request->file('image');
+            $input['imagename'] = time().'.'.$image->extension();         
+            $filePath = public_path('front/images/foods/');    
+            $img = Image::make($image->path());
+            $img->fit(70, 70)->save($filePath.'/'.$input['imagename']);
+            $food->image = $input['imagename']; 
+
         }
      
 
@@ -188,8 +191,25 @@ class FoodController extends AdminController
         if($food->delete()){
             Storage::delete('public/foods/'.$food->image);
 
+              
+            $image_path = "front/images/foods/" .$food->image;
+      if(File::exists($image_path)) {            
+                @unlink($image_path);
+          
+            }
+
+         
             Session::flash('flash_title', 'Success');
             Session::flash('flash_message', 'Image has been deleted');
+     
+     
+     
+     
+     
+     
+     
+     
+     
         }
 
         Session::flash('flash_title', 'Success');

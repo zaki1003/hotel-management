@@ -16,7 +16,7 @@
                             {{ Form::hidden('_method', 'POST') }}
                             {{ csrf_field() }}
 
-                            <div class="row">
+                        <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Event Name<star>*</star></label>
@@ -24,7 +24,7 @@
                                                placeholder="Ex: Holi 2018" value="{{ old('name') }}">
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">

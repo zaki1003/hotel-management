@@ -9,7 +9,8 @@ use Intervention\Image\ImageManagerStatic as ImageManager;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
+use Image;
 class EventController extends AdminController
 {
 
@@ -49,7 +50,7 @@ class EventController extends AdminController
     {
         $rules = [
             'name' => 'required|max:50|unique:events,name',
-            'image' => 'required|mimes:jpeg, jpg, png',
+            'image' => 'required|mimes:jpeg,jpg,png,PNG,JPEG,JPG,JPG',
             'date' => 'required|date|date_format:Y/m/d|after_or_equal:today',
             'venue' => 'required|max:50',
             'price' => 'required|numeric|min:0',
@@ -74,12 +75,26 @@ class EventController extends AdminController
         $event->status = $request->input('status');
 
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('', 'event');
+          /*  $path = $request->file('image')->store('', 'event');
             $event_image = ImageManager::make('storage/events/' . $path);
-            $event_image->fit(500, 450);
+             $event_image->fit(500, 450);
             $event_image->save(storage_path() . '/app/public/events/' . $path);
-            $event->image = $path;
+            $event->image = $path;*/  
+            $image = $request->file('image');
+            $input['imagename'] = time().'.'.$image->extension();         
+            $filePath = public_path('front/images/events/');    
+            $img = Image::make($image->path());
+       
+         /*  $img->resize(110, 110, function ($const) {
+                $const->aspectRatio();
+            })->save($filePath.'/'.$input['imagename']);*/
+            $img->fit(500, 450)->save($filePath.'/'.$input['imagename']);
+            $event->image = $input['imagename']; 
+      
         }
+        
+
+
 
         $event->save();
 
@@ -143,12 +158,30 @@ class EventController extends AdminController
 
         if ($request->hasFile('image')) {
             Storage::delete('public/events/'.$event->image);
+         
+          
+            $image_path = "front/images/events/" .$event->image;
+        
+      
+    
 
-            $path = $request->file('image')->store('', 'event');
-            $event_image = ImageManager::make('storage/events/' . $path);
-            $event_image->fit(500, 450);
-            $event_image->save(storage_path() . '/app/public/events/' . $path);
-            $event->image = $path;
+      if(File::exists($image_path)) {
+              //  File::delete($image_path);
+                @unlink($image_path);
+          
+            }
+         
+            $image = $request->file('image');
+            $input['imagename'] = time().'.'.$image->extension();         
+            $filePath = public_path('front/images/events/');    
+            $img = Image::make($image->path());
+            $img->fit(500, 450)->save($filePath.'/'.$input['imagename']);
+            $event->image = $input['imagename']; 
+     
+        
+       
+     
+     
         }
 
         $event->save();
@@ -166,6 +199,8 @@ class EventController extends AdminController
      */
     public function destroy($id)
     {
+       
+      
         $event = Event::find($id);
 
         // Delete event bookings
@@ -175,6 +210,21 @@ class EventController extends AdminController
 
         if($event->delete()){
             Storage::delete('public/events/'.$event->image);
+           
+           
+         
+            $image_path = "front/images/events/" .$event->image;
+        
+      
+    
+
+      if(File::exists($image_path)) {
+              //  File::delete($image_path);
+                @unlink($image_path);
+          
+            }
+
+        
 
             Session::flash('flash_title', 'Success');
             Session::flash('flash_message', 'Image has been deleted');
@@ -184,5 +234,12 @@ class EventController extends AdminController
         Session::flash('flash_message', 'The event has been deleted successfully');
         return redirect('admin/event');
 
+
+
+
+
     }
+
+
+
 }

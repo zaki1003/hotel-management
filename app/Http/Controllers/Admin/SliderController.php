@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+use Image;
 
 class SliderController extends AdminController
 {
@@ -76,12 +78,32 @@ class SliderController extends AdminController
 
             // Image Upload
             if ($request->hasFile('image')) {
-                $path = $request->file('image')->store('','slider');
+              
+              
+             /*   $path = $request->file('image')->store('','slider');
                 $slider_image = ImageManager::make('storage/slider/'.$path);
                 $slider_image->fit(1200, 500);
                 $slider_image->save(storage_path().'/app/public/slider/'.$path);
 
                 $slider->name = $path;
+          */
+          
+          
+
+                $image = $request->file('image');
+                $input['imagename'] = time().'.'.$image->extension();         
+                $filePath = public_path('front/images/slider/');    
+                $img = Image::make($image->path());
+                $img->fit(1200, 500)->save($filePath.'/'.$input['imagename']);
+                $slider->name = $input['imagename']; 
+                
+
+          
+          
+          
+          
+          
+          
             }
             $slider->save();
 
@@ -156,12 +178,33 @@ class SliderController extends AdminController
         if($request->hasFile('image')){
             Storage::delete('public/slider/'.$slider->name);
 
-            $path = $request->file('image')->store('','slider');
+         /*  $path = $request->file('image')->store('','slider');
             $slider_image = ImageManager::make('storage/slider/'.$path);
             $slider_image->fit(1200, 500);
             $slider_image->save(storage_path().'/app/public/slider/'.$path);
 
-            $slider->name = $path;
+            $slider->name = $path;*/
+    
+            $image_path = "front/images/slider/" .$slider->name;
+        
+      
+    
+
+            if(File::exists($image_path)) {            
+                      @unlink($image_path);
+                
+                  }
+      
+            $image = $request->file('image');
+                $input['imagename'] = time().'.'.$image->extension();         
+                $filePath = public_path('front/images/slider/');    
+                $img = Image::make($image->path());
+                $img->fit(1200, 500)->save($filePath.'/'.$input['imagename']);
+                $slider->name = $input['imagename']; 
+                
+
+          
+    
         }
         $slider->save();
         Session::flash('flash_title', 'Success');
@@ -180,8 +223,26 @@ class SliderController extends AdminController
         $slider = Slider::findOrFail($id);
         if($slider->delete()){
             Storage::delete('public/slider/'.$slider->name);
+       
+       
+       
+            $image_path = "front/images/slider/" .$slider->name;
+        
+      
+    
+
+            if(File::exists($image_path)) {            
+                      @unlink($image_path);
+                
+                  }
+      
+       
+       
             Session::flash('flash_title', 'Success');
             Session::flash('flash_message', 'Image has been deleted');
+       
+       
+       
             return redirect('admin/slider');
         }
         return redirect()
