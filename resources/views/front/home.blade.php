@@ -208,7 +208,7 @@
             </div>
             <div class="row">
                 @if(count($slider_images)> 0)
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="bot-gal h-gal">
                         <h4>Photo Gallery</h4>
                         <ul>
@@ -220,15 +220,7 @@
                     </div>
                 </div>
                 @endif
-                <div class="col-md-4">
-                    <div class="bot-gal h-vid">
-                        <h4>Video Gallery</h4>
-                        <iframe src="{{config('app.video')}}?autoplay=0&amp;showinfo=0&amp;controls=0" allowfullscreen></iframe>
-                        <h5>Introductory Video</h5>
-                        <p>Watch this video to learn more about our hotel facilities, luxuries and environment</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="bot-gal h-blog">
                         <h4>Latest Reviews</h4>
                         <ul>
