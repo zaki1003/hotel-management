@@ -20,7 +20,7 @@
     <!-- ALL CSS FILES -->
     <link href="{{ asset("front/css/materialize.css") }}" rel="stylesheet">
     <link href="{{ asset("front/css/style.css") }}" rel="stylesheet">
-    <link href="{{ asset("front/css/bootstrap.css") }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("front/css/styles.css") }}" rel="stylesheet" type="text/css" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href="{{ asset("front/css/responsive.css") }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -1,16 +1,4 @@
-/*-----------------------------------------
- [MASTER RESPONSIVE STYLE SHEET]
- * Project: The Royal - Hotel | Restaurant Booking
- * Version: v1.1.1
- * Copyright 2017-2020 rn53themes
- * Last Changes: 01 Aug 2017 
- * Author: RN53 Themes
- * Email:      rn53themes@gmail.com
- * Website:    http://www.rn53themes.net 
- -----------------------------------------------*/
-/*-------------------------------------------------------*/
-/* When the browser is between 0px and 1200px wide,below css will be applied.
-/*-------------------------------------------------------*/
+
 
 @media screen and (max-width: 1200px) {} @media screen and (min-width: 1200px) {} @media screen and (max-width: 1200px) and (min-width: 992px) {}
 /*-------------------------------------------------------*/

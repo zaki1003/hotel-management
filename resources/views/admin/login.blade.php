@@ -12,8 +12,8 @@
     <meta name="viewport" content="width=device-width" />
 
 
-    <!-- Bootstrap core CSS     -->
-    <link href="{{asset('backend/css/bootstrap.min.css')}}" rel="stylesheet" />
+  
+    <link href="{{asset('backend/css/styles.css')}}" rel="stylesheet" />
 
     <!--  Paper Dashboard core CSS    -->
     <link href="{{asset('backend/css/paper-dashboard.css')}}" rel="stylesheet"/>

@@ -26,7 +26,7 @@
             </ul>
         </nav>
         <div class="copyright pull-right">
-            &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> with Paper Dashboard and Bootstrap
+            &copy; <script>document.write(new Date().getFullYear())</script> </i>
         </div>
     </div>
 </footer>

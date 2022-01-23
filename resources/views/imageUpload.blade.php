@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>laravel 6 image upload example - ItSolutionStuff.com.com</title>
-    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+    <title>image upload example </title>
+   
 </head>
   
 <body>
 <div class="container">
    
     <div class="panel panel-primary">
-      <div class="panel-heading"><h2>laravel 6 image upload example - ItSolutionStuff.com.com</h2></div>
+      <div class="panel-heading"><h2>image upload example </h2></div>
       <div class="panel-body">
    
         @if ($message = Session::get('success'))

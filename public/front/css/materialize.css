@@ -1,13 +1,4 @@
-/*-----------------------------------------
- [MATERIALIZE FRAMEWORK STYLE SHEET]
- * Project: The Royal - Hotel | Restaurant Booking
- * Version: v1.1.1
- * Copyright 2017-2020 rn53themes
- * Last Changes: 01 Aug 2017 
- * Author: RN53 Themes
- * Email:      rn53themes@gmail.com
- * Website:    http://www.rn53themes.net 
- -----------------------------------------------*/
+
 
 .materialize-red {
     background-color: #e51c23 !important;
@@ -4954,7 +4945,7 @@ input[type=number],
 input[type=search],
 textarea.materialize-textarea {
     background-color: transparent;
-    */ border: none;
+     border: none;
     /* border-bottom: 1px solid #9e9e9e; */
     
     border-radius: 0;
