@@ -59,7 +59,7 @@
                             @continue($event->date > today()->format('Y-m-d') || $event->date == today()->format('Y-m-d'))
                             <!--EVENT-->
                                 <div class="row events">
-                                    <div class="col-md-2"> <img src="{{ ('storage/events/'. $event->image) }}" alt="" /> </div>
+                                    <div class="col-md-2"> <img src="{{ ('front/images/events/'. $event->image) }}" alt="" /> </div>
                                     <div class="col-md-8">
                                         <h3>{{ $event->name }}</h3> <span><strong>Date: </strong> {{ \Carbon\Carbon::parse($event->date)->toFormattedDateString() }}</span>
                                         <p><strong>Price: </strong> {{ $event->price }} DA</p>

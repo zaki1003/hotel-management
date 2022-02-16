@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
 
 class UserController extends AdminController
 {
@@ -175,7 +176,7 @@ class UserController extends AdminController
             $user->about = $request->input('about');
             $user->role = $request->input('role');
             $user->status = $request->input('status');
-
+             if (    $user->role == null)     $user->role = "user";
             if ($request->input('password')){
                 $user->password = bcrypt($request->input('password'));
             }

@@ -4,7 +4,7 @@
     <div class="db-cent-3">
         <div class="db-cent-table db-com-table">
             <div class="db-title">
-                <h3>Edit Profile</h3>
+                <h3>Reset Password</h3>
                 <p>Change your password by using following form.</p>
             </div>
             <div class="book-form inn-com-form db-form">
@@ -18,7 +18,7 @@
                                    class="validate {{ $errors->has('password') ? ' invalid' : '' }}"
                                    id="userPassword"
                                    required>
-                            <label>Address</label>
+                            <label>New Password</label>
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -32,7 +32,7 @@
                                    class="validate {{ $errors->has('password_confirmation') ? ' invalid' : '' }}"
                                    equalTo="#userPassword"
                                    required>
-                            <label>Address</label>
+                            <label>Confirm Password</label>
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                             <strong>{{ $errors->first('password_confirmation') }}</strong>
