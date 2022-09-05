@@ -1,5 +1,5 @@
 # Hotel Management - Laravel Application
-Hotel Management is a web based application used for management and booking. With our application users can book a room in the hotel and participate in hotel events.The admin can check reservations and events,manage foods menu,rooms and facilities.It is built using laravel framework,HTML,CSS,JavaScript,JQuery.
+This is a hotel website created for management and booking. With our application users can book a room in the hotel and participate in hotel events.The admin can check reservations and events,manage foods menu,rooms and facilities.It is built using laravel framework,HTML,CSS,JavaScript,JQuery.
 
 
 ## Screenshots
